@@ -1,0 +1,1 @@
+go install ./src/mo 
