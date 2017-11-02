@@ -45,6 +45,7 @@ func main() {
         },
         getBase64Command(),
         getSqlite3Command(),
+        getExe64Command(),
     }
 
     app.Flags = []cli.Flag{

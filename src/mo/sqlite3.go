@@ -17,7 +17,7 @@ func getSqlite3Command() cli.Command {
         Category:    "Labthink tools",
         Usage:       "Change Sqlite3 UserPass",
         UsageText:   "Example: mo sqlite3 admin 123456 ",
-        Description: "Calculate base64 or debase64.",
+        Description: "change the user'password in user.db.",
         ArgsUsage:   "<DbFullName> <UserToChange> <PasswordToSet>",
         Flags: []cli.Flag{
             cli.BoolFlag{
@@ -29,6 +29,7 @@ func getSqlite3Command() cli.Command {
         Action: func(c *cli.Context) error {
             //fmt.Println("base64 task: ", c.Args().First())
             //fmt.Println("base64 task: ", c.Args())
+            color.Yellow("Author:Liu Xuan,last modified at 2017/11/02")
             checkArgResult := checkArgs(c)
             if checkArgResult > 0 {
                 return nil
@@ -113,8 +114,3 @@ func changePassword(DbFile string, username string, password string, showFlag bo
 
 }
 
-func checkErr(err error) {
-    if err != nil {
-        panic(err)
-    }
-}
